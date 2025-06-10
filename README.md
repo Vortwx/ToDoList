@@ -36,5 +36,8 @@ dotnet add ToDoList.Api/ToDoList.Api.csproj reference ToDoList.Infrastructure/To
 ```
 
 Add DbContext and configure it in Program.cs under Presentation Layer
-Set the connection string to TrustServerCertificate=True as this is local db.
-Server=.; as I use Entity Framework core to internally managed data storage.
+
+```
+dotnet dev-certs https --trust
+```
+Command that is useful when browser complains about the unsafe localhost page.
