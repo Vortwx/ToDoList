@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dEMcLEs5PaI=",
+  "dgSpecHash": "AG3jMxq2KVM=",
   "success": true,
   "projectFilePath": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoList.Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Goh Yi Harn\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
-    "C:\\Users\\Goh Yi Harn\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512"
+    "C:\\Users\\Goh Yi Harn\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\Goh Yi Harn\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Goh Yi Harn\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
