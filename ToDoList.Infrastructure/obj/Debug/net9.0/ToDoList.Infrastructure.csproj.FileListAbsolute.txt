@@ -1,0 +1,6 @@
+C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Infrastructure\obj\Debug\net9.0\ToDoList.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Infrastructure\obj\Debug\net9.0\ToDoList.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Infrastructure\obj\Debug\net9.0\ToDoList.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Infrastructure\obj\Debug\net9.0\ToDoList.Infrastructure.AssemblyInfo.cs
+C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Infrastructure\obj\Debug\net9.0\ToDoList.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Infrastructure\obj\Debug\net9.0\ToDoList.Infrastructure.sourcelink.json
