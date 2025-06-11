@@ -1,8 +1,9 @@
 using MediatR;
 using AutoMapper;
+using ToDoList.Application.Interfaces;
 using ToDoList.Application.ToDoTasks.Dtos;
 using ToDoList.Domain.Entities;
-using ToDoList.Domain.Interfaces;
+
 
 namespace ToDoList.Application.ToDoTasks.Commands.CreateToDoTask;
 
@@ -21,20 +22,25 @@ public class CreateToDoTaskHandler : IRequestHandler<CreateToDoTask, ToDoTaskDto
 
     public async Task<ToDoTaskDto> Handle(CreateToDoTask request, CancellationToken cancellationToken)
     {
-        var task = new ToDoTask(request.Title, request.Notes, request.DueDateTime, request.IsDone);
-        
+        var task = new ToDoTask(
+            request.CreateToDoTaskDto.Notes,
+            request.CreateToDoTaskDto.Title,
+            request.CreateToDoTaskDto.DueDateTime,
+            request.CreateToDoTaskDto.IsDone
+        );
+
         try
         {
-            var parentList = await _toDoTaskListRepository.GetTaskListByIdAsync(request.ParentListId);
+            var parentList = await _toDoTaskListRepository.GetTaskListByIdAsync(request.CreateToDoTaskDto.ParentListId);
+            await _toDoTaskRepository.CreateTaskAsync(task);
+            parentList.AddTask(task); // Entities-specific method
+            await _toDoTaskListRepository.UpdateTaskListAsync(parentList);
         }
         catch (Exception ex)
         {
             throw new KeyNotFoundException("Parent list not found", ex);
         }
         
-        await _toDoTaskRepository.CreateTaskAsync(task);
-        parentList.AddTask(task); // Entities-specific method
-        await _toDoTaskListRepository.UpdateTaskListAsync(parentList);
         return _mapper.Map<ToDoTaskDto>(task); // Output DTO always use ToDoTaskDto
     }
 }

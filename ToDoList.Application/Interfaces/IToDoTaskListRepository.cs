@@ -1,12 +1,14 @@
+using ToDoList.Domain.Entities;
+
 namespace ToDoList.Application.Interfaces
 {
-    public interface IToDoTaskRepository : IGenericRepository<ToDoTask>
+    public interface IToDoTaskListRepository
     {
         Task<ToDoTaskList?> GetTaskListByIdAsync(Guid id);
         Task<IEnumerable<ToDoTaskList>> GetAllTaskListAsync();
-        Task AddTaskListAsync(ToDoTaskList taskList);
+        Task CreateTaskListAsync(ToDoTaskList taskList);
         Task UpdateTaskListAsync(ToDoTaskList taskList);
-        Task DeleteTaskListByIdAsync(Guid id);
+        Task DeleteTaskListAsync(ToDoTaskList taskList);
 
     }
 }

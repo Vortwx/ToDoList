@@ -1,5 +1,6 @@
 using ToDoList.Application.Interfaces;
 using ToDoList.Domain.Entities;
+using ToDoList.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace ToDoList.Infrastructure.Repository;
@@ -12,31 +13,31 @@ public class ToDoTaskListRepository : IToDoTaskListRepository
         _context = context;
     }
 
-    public async Task<ToDoTaskList> GetTaskListByIdAsync(Guid id)
+    public async Task<ToDoTaskList?> GetTaskListByIdAsync(Guid id)
     {
-        return await _context.ToDoTaskLists.FindAsync(id);
+        return await _context.ToDoTaskListCollection.FindAsync(id);
     }
 
     public async Task CreateTaskListAsync(ToDoTaskList taskList)
     {
-        _context.ToDoTaskLists.Add(taskList);
+        _context.ToDoTaskListCollection.Add(taskList);
         await _context.SaveChangesAsync();
     }
 
     public async Task UpdateTaskListAsync(ToDoTaskList taskList)
     {
-        _context.ToDoTaskLists.Update(taskList);
+        _context.ToDoTaskListCollection.Update(taskList);
         await _context.SaveChangesAsync();
     }
 
     public async Task DeleteTaskListAsync(ToDoTaskList taskList)
     {
-        _context.ToDoTaskLists.Remove(taskList);
+        _context.ToDoTaskListCollection.Remove(taskList);
         await _context.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<ToDoTaskList>> GetAllTaskListsAsync()
+    public async Task<IEnumerable<ToDoTaskList>> GetAllTaskListAsync()
     {
-        return await _context.ToDoTaskLists.ToListAsync();
+        return await _context.ToDoTaskListCollection.ToListAsync();
     }
 }
