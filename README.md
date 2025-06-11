@@ -41,3 +41,10 @@ Add DbContext and configure it in Program.cs under Presentation Layer
 dotnet dev-certs https --trust
 ```
 Command that is useful when browser complains about the unsafe localhost page.
+
+The API structure is quite different from the traditional Service-Controller architecture
+
+1. IRepository & DTO: Define contracts of what to do (like CRUD) and what Dto is used to communicate (Application)
+2. Repository: Abstract away details of data storage and retrieval, Know how to store but don't know why (Infrastructure, theoretically it should be in )
+3. Service: Define business logic, implement IRepository, technical details of how data is stored/retrieved is abstracted away (Application)
+4. Controller: Entry point for external API request (Presentation) 
