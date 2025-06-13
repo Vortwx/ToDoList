@@ -30,6 +30,14 @@ public class ToDoTaskController: ControllerBase
     //    return await _mediator.Send(new GetTasksByDueDateTime(dueDateTime));
     //}
 
+    /// <summary>
+    /// Creates a new to-do task.
+    /// </summary>
+    /// <param name="createToDoTaskDto">The details of the to-do task to create.</param>
+    /// <returns>The created to-do task.</returns>
+    /// <response code="200">Returns the newly created to-do task.</response>
+    /// <response code="400">If the request is invalid.</response>
+    /// <response code="500">If an internal server error occurs.</response>
     [HttpPost] 
     [ProducesResponseType(typeof(ToDoTaskDto), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<ToDoTaskDto>> CreateToDoTask(CreateToDoTaskDto createToDoTaskDto)

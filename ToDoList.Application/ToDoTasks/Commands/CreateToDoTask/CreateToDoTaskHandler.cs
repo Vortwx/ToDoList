@@ -9,13 +9,11 @@ namespace ToDoList.Application.ToDoTasks.Commands.CreateToDoTask;
 
 public class CreateToDoTaskHandler : IRequestHandler<CreateToDoTask, ToDoTaskDto>
 {
-    private readonly IToDoTaskRepository _toDoTaskRepository;
     private readonly IToDoTaskListRepository _toDoTaskListRepository;
     private readonly IMapper _mapper;
 
-    public CreateToDoTaskHandler(IToDoTaskRepository toDoTaskRepository, IToDoTaskListRepository toDoTaskListRepository, IMapper mapper)
+    public CreateToDoTaskHandler(IToDoTaskListRepository toDoTaskListRepository, IMapper mapper)
     {
-        _toDoTaskRepository = toDoTaskRepository;
         _toDoTaskListRepository = toDoTaskListRepository;
         _mapper = mapper;
     }
@@ -32,7 +30,6 @@ public class CreateToDoTaskHandler : IRequestHandler<CreateToDoTask, ToDoTaskDto
         try
         {
             var parentList = await _toDoTaskListRepository.GetTaskListByIdAsync(request.CreateToDoTaskDto.ParentListId);
-            await _toDoTaskRepository.CreateTaskAsync(task);
             parentList.AddTask(task); // Entities-specific method
             await _toDoTaskListRepository.UpdateTaskListAsync(parentList);
         }

@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace ToDoList.Domain.Entities;
 public class ToDoTaskList
 {
@@ -23,9 +25,29 @@ public class ToDoTaskList
         Tasks.Add(task);
     }
 
-    public void RemoveTask(ToDoTask task)
+    public void RemoveTask(Guid taskId)
     {
-        if (task == null) return;
-        Tasks.Remove(task);
+        var taskToRemove = GetTask(taskId);
+
+        if (taskToRemove == null)
+        {
+            throw new KeyNotFoundException($"Task with Id '{taskId}' not found in this task list.");
+        }
+
+        Tasks.Remove(taskToRemove);
+    }
+
+    public ToDoTask GetTask(Guid taskId)
+    {
+        return Tasks.FirstOrDefault(t => t.Id == taskId);
+    }
+
+    public void UpdateTask(ToDoTask task)
+    {
+        var taskToUpdate = GetTask(task.Id);
+        taskToUpdate.Notes = task.Notes;
+        taskToUpdate.Title = task.Title;
+        taskToUpdate.DueDateTime = task.DueDateTime;
+        taskToUpdate.IsDone = task.IsDone;
     }
 }

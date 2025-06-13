@@ -40,4 +40,12 @@ public class ToDoTaskListRepository : IToDoTaskListRepository
     {
         return await _context.ToDoTaskListCollection.ToListAsync();
     }
+
+    // ToDoTask is aggregated into ToDoTaskList hence this function will be migrated here
+    public async Task<IEnumerable<ToDoTask>> GetTasksByDueDateTimeAsync(DateTime dueDateTime)
+    {
+        return await _context.ToDoTaskCollection
+            .Where(t => t.DueDateTime.Date == dueDateTime.Date)
+            .ToListAsync();
+    }
 }

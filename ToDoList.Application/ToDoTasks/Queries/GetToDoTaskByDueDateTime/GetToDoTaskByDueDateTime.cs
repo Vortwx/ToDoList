@@ -1,0 +1,17 @@
+using MediatR;
+using ToDoList.Application.ToDoTasks.Dtos;
+
+namespace ToDoList.Application.ToDoTasks.Queries.GetToDoTaskByDueDateTime
+{
+    public class GetToDoTaskByDueDateTime: IRequest<ToDoTaskDto>
+    {
+        public DateTime DueDateTime { get; set; }
+        public Guid ParentListId { get; }
+
+        public GetToDoTaskByDueDateTime(DateTime dueDateTime, Guid parentListId)
+        {
+            DueDateTime = dueDateTime;
+            ParentListId = parentListId;
+        }
+    }
+}

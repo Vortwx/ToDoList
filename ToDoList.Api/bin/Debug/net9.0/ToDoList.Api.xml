@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ToDoList.Api</name>
+    </assembly>
+    <members>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskController.CreateToDoTask(ToDoList.Application.ToDoTasks.Dtos.CreateToDoTaskDto)">
+            <summary>
+            Creates a new to-do task.
+            </summary>
+            <param name="createToDoTaskDto">The details of the to-do task to create.</param>
+            <returns>The created to-do task.</returns>
+            <response code="200">Returns the newly created to-do task.</response>
+            <response code="400">If the request is invalid.</response>
+            <response code="500">If an internal server error occurs.</response>
+        </member>
+    </members>
+</doc>

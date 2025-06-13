@@ -260,3 +260,5 @@ C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Api\obj\Debug\net9.0\
 C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Api\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Api\obj\Debug\net9.0\ToDoList.Api.RazorAssemblyInfo.cache
 C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Api\obj\Debug\net9.0\ToDoList.Api.RazorAssemblyInfo.cs
+C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Api\bin\Debug\net9.0\ToDoList.Api.xml
+C:\Users\Goh Yi Harn\Documents\Interview\ToDoList\ToDoList.Api\obj\Debug\net9.0\ToDoList.Api.xml
