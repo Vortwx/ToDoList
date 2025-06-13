@@ -15,7 +15,9 @@ public class ToDoTaskListRepository : IToDoTaskListRepository
 
     public async Task<ToDoTaskList?> GetTaskListByIdAsync(Guid id)
     {
-        return await _context.ToDoTaskListCollection.FindAsync(id);
+        return await _context.ToDoTaskListCollection
+                         .Include(tl => tl.Tasks)
+                         .FirstOrDefaultAsync(tl => tl.Id == id);
     }
 
     public async Task CreateTaskListAsync(ToDoTaskList taskList)
@@ -38,7 +40,9 @@ public class ToDoTaskListRepository : IToDoTaskListRepository
 
     public async Task<IEnumerable<ToDoTaskList>> GetAllTaskListAsync()
     {
-        return await _context.ToDoTaskListCollection.ToListAsync();
+        return await _context.ToDoTaskListCollection
+                .Include(tl => tl.Tasks)
+                .ToListAsync(); 
     }
 
     // ToDoTask is aggregated into ToDoTaskList hence this function will be migrated here

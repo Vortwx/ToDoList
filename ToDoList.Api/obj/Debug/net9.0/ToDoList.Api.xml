@@ -4,15 +4,125 @@
         <name>ToDoList.Api</name>
     </assembly>
     <members>
+        <member name="T:ToDoList.Api.Controllers.ToDoTaskController">
+            <summary>
+            Controller for managing individual ToDo Tasks.
+            Tasks are always associated with a ToDo Task List (aggregate root).
+            </summary>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ToDoList.Api.Controllers.ToDoTaskController"/> class.
+            </summary>
+            <param name="mediator">The MediatR mediator for sending commands and queries.</param>
+        </member>
         <member name="M:ToDoList.Api.Controllers.ToDoTaskController.CreateToDoTask(ToDoList.Application.ToDoTasks.Dtos.CreateToDoTaskDto)">
             <summary>
-            Creates a new to-do task.
+            Creates a new ToDo Task within a specified ToDo Task List.
             </summary>
-            <param name="createToDoTaskDto">The details of the to-do task to create.</param>
-            <returns>The created to-do task.</returns>
-            <response code="200">Returns the newly created to-do task.</response>
-            <response code="400">If the request is invalid.</response>
-            <response code="500">If an internal server error occurs.</response>
+            <param name="createToDoTaskDto">The data for creating the new ToDo Task, including its parent list ID.</param>
+            <returns>The newly created ToDoTaskDto object.</returns>
+            <response code="201">Returns the newly created ToDo Task.</response>
+            <response code="400">If the input data is invalid.</response>
+            <response code="404">If the specified parent ToDo Task List is not found.</response>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskController.GetToDoTaskById(System.Guid,System.Guid)">
+            <summary>
+            Retrieves a specific ToDo Task by its ID and its parent ToDo Task List ID.
+            </summary>
+            <param name="id">The unique identifier of the ToDo Task.</param>
+            <param name="parentListId">The unique identifier of the parent ToDo Task List.</param>
+            <returns>A ToDoTaskDto object.</returns>
+            <response code="200">Returns the requested ToDo Task.</response>
+            <response code="404">If the ToDo Task or its parent ToDo Task List is not found.</response>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskController.UpdateToDoTask(System.Guid,ToDoList.Application.ToDoTasks.Dtos.UpdateToDoTaskDto)">
+            <summary>
+            Updates an existing ToDo Task within a specified ToDo Task List.
+            </summary>
+            <param name="id">The unique identifier of the ToDo Task to update (from route).</param>
+            <param name="updateToDoTaskDto">The updated data for the ToDo Task, including its parent list ID and own ID.</param>
+            <returns>No content if successful.</returns>
+            <response code="204">The ToDo Task was successfully updated.</response>
+            <response code="400">If the input data is invalid or IDs mismatch.</response>
+            <response code="404">If the ToDo Task or its parent ToDo Task List is not found.</response>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskController.DeleteToDoTask(System.Guid,ToDoList.Application.ToDoTasks.Dtos.DeleteToDoTaskDto)">
+            <summary>
+            Deletes a specific ToDo Task from its parent ToDo Task List.
+            </summary>
+            <param name="id">The unique identifier of the ToDo Task to delete (from route).</param>
+            <param name="deleteToDoTaskDto">The data for deleting the ToDo Task, including its parent list ID.</param>
+            <returns>No content if successful.</returns>
+            <response code="204">The ToDo Task was successfully deleted.</response>
+            <response code="400">If the input data is invalid or IDs mismatch.</response>
+            <response code="404">If the ToDo Task or its parent ToDo Task List is not found.</response>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskController.GetToDoTasksByDueDateTime(System.DateTime,System.Guid)">
+            <summary>
+            Retrieves all ToDo Tasks across all lists that have a specific due date and time.
+            </summary>
+            <param name="dueDateTime">The specific due date and time to filter tasks by (ISO 8601 format).</param>
+            <returns>A list of ToDoTaskDto objects.</returns>
+            <response code="200">Returns the list of ToDo Tasks matching the due date.</response>
+        </member>
+        <member name="T:ToDoList.Api.Controllers.ToDoTaskListController">
+            <summary>
+            Controller for managing ToDo Task Lists, which serve as aggregate roots for ToDo Tasks.
+            </summary>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskListController.#ctor(MediatR.IMediator)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ToDoList.Api.Controllers.ToDoTaskListController"/> class.
+            </summary>
+            <param name="mediator">The MediatR mediator for sending commands and queries.</param>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskListController.GetAllToDoTaskLists">
+            <summary>
+            Retrieves all ToDo Task Lists.
+            </summary>
+            <returns>A list of ToDoTaskListDto objects.</returns>
+            <response code="200">Returns the list of ToDo Task Lists.</response>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskListController.GetToDoTaskListById(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a specific ToDo Task List by its ID.
+            </summary>
+            <param name="id">The unique identifier of the ToDo Task List.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>A ToDoTaskListDto object.</returns>
+            <response code="200">Returns the requested ToDo Task List.</response>
+            <response code="404">If the ToDo Task List with the specified ID is not found.</response>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskListController.CreateToDoTaskList(ToDoList.Application.ToDoTaskLists.Dtos.CreateToDoTaskListDto)">
+            <summary>
+            Creates a new ToDo Task List.
+            </summary>
+            <param name="createDto">The data for creating the new ToDo Task List.</param>
+            <returns>The newly created ToDoTaskListDto object.</returns>
+            <response code="200">Returns the newly created ToDo Task List.</response>
+            <response code="400">If the input data is invalid.</response>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskListController.UpdateToDoTaskList(System.Guid,ToDoList.Application.ToDoTaskLists.Dtos.UpdateToDoTaskListDto)">
+            <summary>
+            Updates an existing ToDo Task List, including its associated ToDo Tasks.
+            </summary>
+            <param name="id">The unique identifier of the ToDo Task List to update.</param>
+            <param name="updateToDoTaskListDto">The updated data for the ToDo Task List and its tasks.</param>
+            <returns>The updated ToDoTaskListDto object.</returns>
+            <response code="200">Returns the updated ToDo Task List.</response>
+            <response code="400">If the input data is invalid or IDs mismatch.</response>
+            <response code="404">If the ToDo Task List with the specified ID is not found.</response>
+        </member>
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskListController.DeleteToDoTaskList(System.Guid,ToDoList.Application.ToDoTaskLists.Dtos.ToDoTaskListDto)">
+            <summary>
+            Deletes a ToDo Task List by its ID.
+            This will also cascade delete all associated ToDo Tasks.
+            </summary>
+            <param name="id">The unique identifier of the ToDo Task List to delete.</param>
+            <returns>No content if successful.</returns>
+            <response code="204">The ToDo Task List was successfully deleted.</response>
+            <response code="404">If the ToDo Task List with the specified ID is not found.</response>
         </member>
     </members>
 </doc>

@@ -4,11 +4,13 @@ namespace ToDoList.Application.ToDoTaskLists.Dtos;
 
 public class UpdateToDoTaskListDto
 {
+    public Guid Id { get; set; }
     public string Name { get; set; }
-    public List<ToDoTaskList> Tasks { get; set; }
+    public List<ToDoTask> Tasks { get; set; }
 
-    public UpdateToDoTaskListDto(string name, List<ToDoTaskList> tasks)
+    public UpdateToDoTaskListDto(Guid id, string name, List<ToDoTask> tasks)
     {
+        Id = id;
         Name = name;
         Tasks = tasks;
     }

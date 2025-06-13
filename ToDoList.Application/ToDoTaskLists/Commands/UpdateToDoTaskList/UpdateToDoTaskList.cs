@@ -10,8 +10,8 @@ namespace ToDoList.Application.ToDoTaskLists.Commands.UpdateToDoTaskList;
 public class UpdateToDoTaskList : IRequest<ToDoTaskListDto>
 {
     public UpdateToDoTaskListDto UpdateToDoTaskListDto { get; }
-    public UpdateToDoTaskList(UpdateToDoTaskListDto UpdateToDoTaskListDto)
+    public UpdateToDoTaskList(UpdateToDoTaskListDto updateToDoTaskListDto)
     {
-        UpdateToDoTaskListDto = UpdateToDoTaskListDto;
+        UpdateToDoTaskListDto = updateToDoTaskListDto;
     }
 }

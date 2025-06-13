@@ -9,6 +9,8 @@ namespace ToDoList.Application.Interfaces
         Task CreateTaskListAsync(ToDoTaskList taskList);
         Task UpdateTaskListAsync(ToDoTaskList taskList);
         Task DeleteTaskListAsync(ToDoTaskList taskList);
+        Task<IEnumerable<ToDoTask>> GetTasksByDueDateTimeAsync(DateTime dueDateTime);
+
 
     }
 }

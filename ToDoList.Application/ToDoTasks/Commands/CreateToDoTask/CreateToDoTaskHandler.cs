@@ -35,9 +35,10 @@ public class CreateToDoTaskHandler : IRequestHandler<CreateToDoTask, ToDoTaskDto
         }
         catch (Exception ex)
         {
-            throw new KeyNotFoundException("Parent list not found", ex);
+            throw new KeyNotFoundException($"Task not found within ToDoTaskList '{request.CreateToDoTaskDto.ParentListId}'. {ex.Message}", ex);
         }
         
         return _mapper.Map<ToDoTaskDto>(task); // Output DTO always use ToDoTaskDto
     }
 }
+

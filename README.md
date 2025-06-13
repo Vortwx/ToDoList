@@ -48,3 +48,9 @@ The API structure is quite different from the traditional Service-Controller arc
 2. Repository: Abstract away details of data storage and retrieval, Know how to store but don't know why (Infrastructure, theoretically it should be in )
 3. Service: Define business logic, implement IRepository, technical details of how data is stored/retrieved is abstracted away (Application)
 4. Controller: Entry point for external API request (Presentation) 
+
+
+Encounter a problem where the EF tracker misclassified the state of item leading to an error: Attempted to update or delete an entity that does not exist in the store.
+Resolved by not specifying Guid at start and let EF core do the work.
+
+Lazy evaluation of EF core requires Include() to show child properties

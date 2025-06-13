@@ -5,6 +5,7 @@ using ToDoList.Application.Interfaces;
 using ToDoList.Application.Mappings;
 using ToDoList.Infrastructure.Data;
 using ToDoList.Infrastructure.Repository;
+using ToDoList.Domain.Entities;
 
 
 
@@ -29,11 +30,11 @@ builder.Services.AddMediatR(cfg =>
     );
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseInMemoryDatabase("ToDoListDb")
+    options.UseInMemoryDatabase("ToDoListDb"),
+    ServiceLifetime.Scoped
     );
 
 // Register your Repositories
-builder.Services.AddScoped<IToDoTaskRepository, ToDoTaskRepository>();
 builder.Services.AddScoped<IToDoTaskListRepository, ToDoTaskListRepository>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
@@ -48,6 +49,41 @@ if (app.Environment.IsDevelopment())
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
+// Data Seeding
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<ApplicationDbContext>(); 
+        context.Database.EnsureCreated(); 
+
+        if (!context.ToDoTaskListCollection.Any())
+        {
+            var todayList = new ToDoTaskList("Today");
+
+            var loremIpsumTask = new ToDoTask(
+                notes: "Lorem ipsum dolor sit amet.",
+                title: "Example Task",
+                dueDateTime: DateTime.Today.AddHours(17), // Due 5 PM today
+                isDone: false
+            );
+
+            todayList.AddTask(loremIpsumTask); 
+
+            context.ToDoTaskListCollection.Add(todayList);
+            context.ToDoTaskCollection.Add(loremIpsumTask);
+
+            context.SaveChanges();
+        }
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred while seeding the in-memory database.");
+    }
+}
 
 app.UseHttpsRedirection();
 

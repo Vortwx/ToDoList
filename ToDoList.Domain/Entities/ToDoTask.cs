@@ -5,17 +5,13 @@ public class ToDoTask
 
     public ToDoTask(string notes, string title, DateTime dueDateTime, bool isDone)
     {
-        Id = Guid.NewGuid();
         Notes = notes;
         Title = title;
         DueDateTime = dueDateTime;
         IsDone = isDone;
     }
 
-    private ToDoTask() // EF Core requires a parameterless constructor
-    {
-        Id = Guid.NewGuid();
-    }
+    private ToDoTask() {}
 
     public string Title { get; set; }
     public string Notes { get; set; }
@@ -25,5 +21,13 @@ public class ToDoTask
     public void checkedIsDone()
     {
         IsDone = !IsDone;
+    }
+
+    public void update(string? notes, string? title, DateTime? dueDateTime, bool? isDone)
+    {
+        if (notes != null) Notes = notes;
+        if (title != null) Title = title;
+        if (dueDateTime.HasValue) DueDateTime = dueDateTime.Value;
+        if (isDone.HasValue) IsDone = isDone.Value;
     }
 }

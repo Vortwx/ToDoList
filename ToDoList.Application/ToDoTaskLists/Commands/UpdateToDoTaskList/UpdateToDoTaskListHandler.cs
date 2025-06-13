@@ -28,7 +28,7 @@ public class UpdateToDoTaskListHandler : IRequestHandler<UpdateToDoTaskList, ToD
         var taskList = await _toDoTaskListRepository.GetTaskListByIdAsync(request.UpdateToDoTaskListDto.Id);
         if (taskList == null)
         {
-            throw new KeyNotFoundException($"ToDoTaskList with Id {request.Id} not found.");
+            throw new KeyNotFoundException($"ToDoTaskList with Id {request.UpdateToDoTaskListDto.Id} not found.");
         }
         taskList.Name = request.UpdateToDoTaskListDto.Name;
         // do left outer join where left is the payload.tasks
@@ -44,23 +44,23 @@ public class UpdateToDoTaskListHandler : IRequestHandler<UpdateToDoTaskList, ToD
 
         foreach (var removedTask in removedTasks)
         {
-            taskList.Tasks.RemoveTask(removedTask);
+            taskList.RemoveTask(removedTask.Id);
         }
 
-        foreach (var payloadTask in request.UpdateToDoTaskListDto.Tasks)
+        foreach (var taskPayload in request.UpdateToDoTaskListDto.Tasks)
         {
-            var task = taskList.Tasks.FirstOrDefault(x => x.Id == payloadTask.Id);
+            var task = taskList.Tasks.FirstOrDefault(x => x.Id == taskPayload.Id);
             if (task == null)
             {
-                task = new ToDoTask(payloadTask.Notes, payloadTask.Title, payloadTask.DueDateTime, payloadTask.IsDone);
+                task = new ToDoTask(taskPayload.Notes, taskPayload.Title, taskPayload.DueDateTime, taskPayload.IsDone);
                 taskList.AddTask(task);
             }
             else
             {
-                task.Notes = payloadTask.Notes;
-                task.Title = payloadTask.Title;
-                task.DueDateTime = payloadTask.DueDateTime;
-                task.IsDone = payloadTask.IsDone;
+                task.Notes = taskPayload.Notes;
+                task.Title = taskPayload.Title;
+                task.DueDateTime = taskPayload.DueDateTime;
+                task.IsDone = taskPayload.IsDone;
             }
         }
         

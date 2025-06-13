@@ -10,7 +10,7 @@ using ToDoList.Domain.Entities;
 
 namespace ToDoList.Application.ToDoTasks.Commands.UpdateToDoTask;
 
-public class UpdateToDoTaskHandler : IRequestHandler<UpdateToDoTask, ToDoTaskDto>
+public class UpdateToDoTaskHandler : IRequestHandler<UpdateToDoTask, Unit>
 {
     private readonly IToDoTaskListRepository _toDoTaskListRepository;
     private readonly IMapper _mapper;
@@ -21,7 +21,7 @@ public class UpdateToDoTaskHandler : IRequestHandler<UpdateToDoTask, ToDoTaskDto
         _mapper = mapper;
     }
 
-    public async Task<ToDoTaskDto> Handle(UpdateToDoTask request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(UpdateToDoTask request, CancellationToken cancellationToken)
     {
         var parentList = await _toDoTaskListRepository.GetTaskListByIdAsync(request.UpdateToDoTaskDto.ParentListId);
         
@@ -34,18 +34,18 @@ public class UpdateToDoTaskHandler : IRequestHandler<UpdateToDoTask, ToDoTaskDto
         {
             parentList.UpdateTask(
                 request.UpdateToDoTaskDto.Id,
-                request.UpdateToDoTaskDto.Title,
                 request.UpdateToDoTaskDto.Notes,
+                request.UpdateToDoTaskDto.Title,
                 request.UpdateToDoTaskDto.DueDateTime,
                 request.UpdateToDoTaskDto.IsDone
             );
         }
         catch (KeyNotFoundException ex)
         {
-            throw new KeyNotFoundException($"Task with Id '{taskId}' not found within ToDoTaskList '{parentListId}'.", ex);
+            throw new KeyNotFoundException($"Task with Id '{request.UpdateToDoTaskDto.Id}' not found within ToDoTaskList '{request.UpdateToDoTaskDto.ParentListId}'.", ex);
         }
 
-        var task = await _toDoTaskListRepository.UpdateTaskListAsync(parentList);
-        return _mapper.Map<ToDoTaskDto>(task);
+        await _toDoTaskListRepository.UpdateTaskListAsync(parentList);
+        return Unit.Value;
     }
 }

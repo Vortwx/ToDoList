@@ -19,7 +19,17 @@ public class GetToDoTaskByIdHandler : IRequestHandler<GetToDoTaskById, ToDoTaskD
     public async Task<ToDoTaskDto> Handle(GetToDoTaskById request, CancellationToken cancellationToken)
     {
         var parentList = await _toDoTaskListRepository.GetTaskListByIdAsync(request.ParentListId);
+        if (parentList == null)
+        {
+            throw new KeyNotFoundException($"ToDoTaskList with Id '{request.ParentListId}' not found.");
+        }
+
         var task = parentList.GetTask(request.Id);
+
+        if (task == null)
+        {
+            throw new KeyNotFoundException($"ToDoTask with Id '{request.Id}' not found within ToDoTaskList '{request.ParentListId}'.");
+        }
 
         return _mapper.Map<ToDoTaskDto>(task); // Output DTO always use ToDoTaskDto
     }

@@ -18,7 +18,7 @@ public class GetToDoTaskListByIdHandler : IRequestHandler<GetToDoTaskListById, T
 
     public async Task<ToDoTaskListDto> Handle(GetToDoTaskListById request, CancellationToken cancellationToken)
     {
-        var task = await _toDoTaskRepository.GetTaskListByIdAsync(request.Id);
+        var task = await _toDoTaskListRepository.GetTaskListByIdAsync(request.Id);
         return _mapper.Map<ToDoTaskListDto>(task); // Output DTO always use ToDoTaskListDto
     }
 }

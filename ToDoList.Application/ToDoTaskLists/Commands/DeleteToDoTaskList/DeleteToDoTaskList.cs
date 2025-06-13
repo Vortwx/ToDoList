@@ -10,8 +10,8 @@ namespace ToDoList.Application.ToDoTaskLists.Commands.DeleteToDoTaskList;
 public class DeleteToDoTaskList : IRequest<ToDoTaskListDto>
 {
     public ToDoTaskListDto ToDoTaskListDto { get; }
-    public DeleteToDoTaskList(ToDoTaskListDto ToDoTaskListDto)
+    public DeleteToDoTaskList(ToDoTaskListDto toDoTaskListDto)
     {
-        ToDoTaskListDto = ToDoTaskListDto;
+        ToDoTaskListDto = toDoTaskListDto;
     }
 }

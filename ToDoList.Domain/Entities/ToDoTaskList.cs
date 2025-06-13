@@ -3,22 +3,21 @@ using System.Linq;
 namespace ToDoList.Domain.Entities;
 public class ToDoTaskList
 {
-    public Guid Id { get; private set; }
+    public Guid Id { get; private set; } // Set to Guid.Empty by default
 
     public ToDoTaskList(string name)
     {
-        Id = Guid.NewGuid();
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            throw new ArgumentException("Task list name cannot be empty.", nameof(name));
+        }
         Name = name;
-        Tasks = new List<ToDoTask>(); // empty when created
     }
 
-    private ToDoTaskList() // EF Core requires a parameterless constructor
-    {
-        Id = Guid.NewGuid();
-    }
+    private ToDoTaskList() {} // EF core constructor will initialise Id
 
     public string Name { get; set; }
-    public List<ToDoTask> Tasks { get; private set; } // private stter for collection to control updates
+    public List<ToDoTask> Tasks { get; private set; } = new List<ToDoTask>(); // private stter for collection to control updates
 
     public void AddTask(ToDoTask task)
     {
@@ -42,12 +41,9 @@ public class ToDoTaskList
         return Tasks.FirstOrDefault(t => t.Id == taskId);
     }
 
-    public void UpdateTask(ToDoTask task)
+    public void UpdateTask(Guid id, string? notes, string? title, DateTime? dueDateTime, bool? isDone)
     {
-        var taskToUpdate = GetTask(task.Id);
-        taskToUpdate.Notes = task.Notes;
-        taskToUpdate.Title = task.Title;
-        taskToUpdate.DueDateTime = task.DueDateTime;
-        taskToUpdate.IsDone = task.IsDone;
+        var taskToUpdate = GetTask(id);
+        taskToUpdate.update(notes, title, dueDateTime, isDone);
     }
 }

@@ -15,6 +15,7 @@ namespace ToDoList.Infrastructure.Configurations
             builder.HasMany(tl => tl.Tasks)
                 .WithOne() //Only ToDoTaskList know about ToDoTask
                 .HasForeignKey("ListId") //Name of FK in EF core ToDoTask table
+                .IsRequired() // Make this relationship required to make sure deletion works
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

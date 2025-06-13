@@ -7,15 +7,14 @@ using ToDoList.Application.Interfaces;
 using ToDoList.Application.ToDoTasks.Dtos;
 using ToDoList.Domain.Entities;
 
+namespace ToDoList.Application.ToDoTasks.Queries.GetToDoTaskByDueDateTime;
 
-namespace ToDoList.Application.ToDoTasks.Commands.GetToDoTaskByDueDateTime;
-
-public class GetToDoTaskByDueDateTimeHandler : IRequestHandler<GetToDoTaskByDueDateTime, ToDoTaskDto>
+public class GetToDoTaskByDueDateTimeHandler : IRequestHandler<GetToDoTaskByDueDateTime, List<ToDoTaskDto>>
 {
     private readonly IToDoTaskListRepository _toDoTaskListRepository;
     private readonly IMapper _mapper;
 
-    public GetToDoTaskByDueDateTimeHandler(IToDoTaskRepository toDoTaskListRepository, IMapper mapper)
+    public GetToDoTaskByDueDateTimeHandler(IToDoTaskListRepository toDoTaskListRepository, IMapper mapper)
     {
         _toDoTaskListRepository = toDoTaskListRepository;
         _mapper = mapper;

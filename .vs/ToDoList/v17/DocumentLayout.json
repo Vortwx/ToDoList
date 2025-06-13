@@ -3,40 +3,47 @@
   "WorkspaceRootPath": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12214808-A9EB-4E7D-8E85-3AF1C60E60F8}|ToDoList.Api\\ToDoList.Api.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.api\\controllers\\todotasklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12214808-A9EB-4E7D-8E85-3AF1C60E60F8}|ToDoList.Api\\ToDoList.Api.csproj|solutionrelative:todolist.api\\controllers\\todotasklistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12214808-A9EB-4E7D-8E85-3AF1C60E60F8}|ToDoList.Api\\ToDoList.Api.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12214808-A9EB-4E7D-8E85-3AF1C60E60F8}|ToDoList.Api\\ToDoList.Api.csproj|solutionrelative:todolist.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.application\\todotasklists\\commands\\createtodotasklist\\createtodotasklisthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|solutionrelative:todolist.application\\todotasklists\\commands\\createtodotasklist\\createtodotasklisthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.application\\todotasks\\queries\\gettodotaskbyid\\gettodotaskbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|solutionrelative:todolist.application\\todotasks\\queries\\gettodotaskbyid\\gettodotaskbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.application\\todotasklists\\commands\\createtodotasklist\\createtodotasklist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|solutionrelative:todolist.application\\todotasklists\\commands\\createtodotasklist\\createtodotasklist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.application\\todotasklists\\queries\\gettodotasklistbyid\\gettodotasklistbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|solutionrelative:todolist.application\\todotasklists\\queries\\gettodotasklistbyid\\gettodotasklistbyidhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F419B929-BD1C-4219-B62A-A212747CAC55}|ToDoList.Infrastructure\\ToDoList.Infrastructure.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.infrastructure\\repository\\todotasklistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F419B929-BD1C-4219-B62A-A212747CAC55}|ToDoList.Infrastructure\\ToDoList.Infrastructure.csproj|solutionrelative:todolist.infrastructure\\repository\\todotasklistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F419B929-BD1C-4219-B62A-A212747CAC55}|ToDoList.Infrastructure\\ToDoList.Infrastructure.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.infrastructure\\repository\\todotaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F419B929-BD1C-4219-B62A-A212747CAC55}|ToDoList.Infrastructure\\ToDoList.Infrastructure.csproj|solutionrelative:todolist.infrastructure\\repository\\todotaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12214808-A9EB-4E7D-8E85-3AF1C60E60F8}|ToDoList.Api\\ToDoList.Api.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.api\\controllers\\todotaskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12214808-A9EB-4E7D-8E85-3AF1C60E60F8}|ToDoList.Api\\ToDoList.Api.csproj|solutionrelative:todolist.api\\controllers\\todotaskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE5922A4-A20F-47CE-AF88-E6BC4C7EAB9C}|ToDoList.Domain\\ToDoList.Domain.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.domain\\entities\\todotask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE5922A4-A20F-47CE-AF88-E6BC4C7EAB9C}|ToDoList.Domain\\ToDoList.Domain.csproj|solutionrelative:todolist.domain\\entities\\todotask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0DAEBFDD-0489-48D0-8A28-733F93C00BCF}|ToDoList.UnitTests\\ToDoList.UnitTests.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.unittests\\todolisttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0DAEBFDD-0489-48D0-8A28-733F93C00BCF}|ToDoList.UnitTests\\ToDoList.UnitTests.csproj|solutionrelative:todolist.unittests\\todolisttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.application\\todotasklists\\dtos\\updatetodotasklistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|solutionrelative:todolist.application\\todotasklists\\dtos\\updatetodotasklistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0DAEBFDD-0489-48D0-8A28-733F93C00BCF}|ToDoList.UnitTests\\ToDoList.UnitTests.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.unittests\\todolist.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0DAEBFDD-0489-48D0-8A28-733F93C00BCF}|ToDoList.UnitTests\\ToDoList.UnitTests.csproj|solutionrelative:todolist.unittests\\todolist.unittests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.application\\todotasklists\\dtos\\createtodotasklistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|solutionrelative:todolist.application\\todotasklists\\dtos\\createtodotasklistdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.application\\todotasks\\dtos\\todotaskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|solutionrelative:todolist.application\\todotasks\\dtos\\todotaskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.application\\todotasks\\commands\\createtodotask\\createtodotaskhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|solutionrelative:todolist.application\\todotasks\\commands\\createtodotask\\createtodotaskhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F419B929-BD1C-4219-B62A-A212747CAC55}|ToDoList.Infrastructure\\ToDoList.Infrastructure.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.infrastructure\\repository\\todotaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F419B929-BD1C-4219-B62A-A212747CAC55}|ToDoList.Infrastructure\\ToDoList.Infrastructure.csproj|solutionrelative:todolist.infrastructure\\repository\\todotaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|c:\\users\\goh yi harn\\documents\\interview\\todolist\\todolist.application\\todotasks\\commands\\updatetodotask\\updatetodotask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02BD6B35-A5D7-4FFA-93EE-C1A3F8A0D299}|ToDoList.Application\\ToDoList.Application.csproj|solutionrelative:todolist.application\\todotasks\\commands\\updatetodotask\\updatetodotask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,118 +58,145 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ToDoTaskListController.cs",
-              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Api\\Controllers\\ToDoTaskListController.cs",
-              "RelativeDocumentMoniker": "ToDoList.Api\\Controllers\\ToDoTaskListController.cs",
-              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Api\\Controllers\\ToDoTaskListController.cs",
-              "RelativeToolTip": "ToDoList.Api\\Controllers\\ToDoTaskListController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABTAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Api\\Program.cs",
+              "RelativeDocumentMoniker": "ToDoList.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Api\\Program.cs",
+              "RelativeToolTip": "ToDoList.Api\\Program.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T07:20:58.478Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ToDoTask.cs",
-              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Domain\\Entities\\ToDoTask.cs",
-              "RelativeDocumentMoniker": "ToDoList.Domain\\Entities\\ToDoTask.cs",
-              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Domain\\Entities\\ToDoTask.cs",
-              "RelativeToolTip": "ToDoList.Domain\\Entities\\ToDoTask.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T07:14:49.011Z",
+              "WhenOpened": "2025-06-13T15:36:59.285Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CreateToDoTaskList.cs",
-              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Commands\\CreateToDoTaskList\\CreateToDoTaskList.cs",
-              "RelativeDocumentMoniker": "ToDoList.Application\\ToDoTaskLists\\Commands\\CreateToDoTaskList\\CreateToDoTaskList.cs",
-              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Commands\\CreateToDoTaskList\\CreateToDoTaskList.cs",
-              "RelativeToolTip": "ToDoList.Application\\ToDoTaskLists\\Commands\\CreateToDoTaskList\\CreateToDoTaskList.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAsAAAAAAAAAA==",
+              "Title": "GetToDoTaskListByIdHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Queries\\GetToDoTaskListById\\GetToDoTaskListByIdHandler.cs",
+              "RelativeDocumentMoniker": "ToDoList.Application\\ToDoTaskLists\\Queries\\GetToDoTaskListById\\GetToDoTaskListByIdHandler.cs",
+              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Queries\\GetToDoTaskListById\\GetToDoTaskListByIdHandler.cs",
+              "RelativeToolTip": "ToDoList.Application\\ToDoTaskLists\\Queries\\GetToDoTaskListById\\GetToDoTaskListByIdHandler.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAgwBcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T07:05:04.225Z",
+              "WhenOpened": "2025-06-13T15:19:54.657Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UpdateToDoTaskListDto.cs",
-              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Dtos\\UpdateToDoTaskListDto.cs",
-              "RelativeDocumentMoniker": "ToDoList.Application\\ToDoTaskLists\\Dtos\\UpdateToDoTaskListDto.cs",
-              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Dtos\\UpdateToDoTaskListDto.cs",
-              "RelativeToolTip": "ToDoList.Application\\ToDoTaskLists\\Dtos\\UpdateToDoTaskListDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ToDoTaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Infrastructure\\Repository\\ToDoTaskRepository.cs",
+              "RelativeDocumentMoniker": "ToDoList.Infrastructure\\Repository\\ToDoTaskRepository.cs",
+              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Infrastructure\\Repository\\ToDoTaskRepository.cs",
+              "RelativeToolTip": "ToDoList.Infrastructure\\Repository\\ToDoTaskRepository.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAA2wBIAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T06:59:38.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateToDoTaskListHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Commands\\CreateToDoTaskList\\CreateToDoTaskListHandler.cs",
-              "RelativeDocumentMoniker": "ToDoList.Application\\ToDoTaskLists\\Commands\\CreateToDoTaskList\\CreateToDoTaskListHandler.cs",
-              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Commands\\CreateToDoTaskList\\CreateToDoTaskListHandler.cs",
-              "RelativeToolTip": "ToDoList.Application\\ToDoTaskLists\\Commands\\CreateToDoTaskList\\CreateToDoTaskListHandler.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T07:05:18.844Z",
+              "WhenOpened": "2025-06-13T15:10:43.407Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "ToDoTaskListRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Infrastructure\\Repository\\ToDoTaskListRepository.cs",
+              "RelativeDocumentMoniker": "ToDoList.Infrastructure\\Repository\\ToDoTaskListRepository.cs",
+              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Infrastructure\\Repository\\ToDoTaskListRepository.cs",
+              "RelativeToolTip": "ToDoList.Infrastructure\\Repository\\ToDoTaskListRepository.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIA2wBEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T13:57:44.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetToDoTaskByIdHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTasks\\Queries\\GetToDoTaskById\\GetToDoTaskByIdHandler.cs",
+              "RelativeDocumentMoniker": "ToDoList.Application\\ToDoTasks\\Queries\\GetToDoTaskById\\GetToDoTaskByIdHandler.cs",
+              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTasks\\Queries\\GetToDoTaskById\\GetToDoTaskByIdHandler.cs",
+              "RelativeToolTip": "ToDoList.Application\\ToDoTasks\\Queries\\GetToDoTaskById\\GetToDoTaskByIdHandler.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T14:30:19.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAOgTAAAAAAAAAAAqwOUTAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-06-13T14:07:39.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ToDoList.UnitTests",
+              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.UnitTests\\ToDoList.UnitTests.csproj",
+              "RelativeDocumentMoniker": "ToDoList.UnitTests\\ToDoList.UnitTests.csproj",
+              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.UnitTests\\ToDoList.UnitTests.csproj",
+              "RelativeToolTip": "ToDoList.UnitTests\\ToDoList.UnitTests.csproj",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-13T13:45:16.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ToDoListTests.cs",
+              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.UnitTests\\ToDoListTests.cs",
+              "RelativeDocumentMoniker": "ToDoList.UnitTests\\ToDoListTests.cs",
+              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.UnitTests\\ToDoListTests.cs",
+              "RelativeToolTip": "ToDoList.UnitTests\\ToDoListTests.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAgwGsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T13:39:25.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ToDoTaskController.cs",
               "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Api\\Controllers\\ToDoTaskController.cs",
               "RelativeDocumentMoniker": "ToDoList.Api\\Controllers\\ToDoTaskController.cs",
               "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Api\\Controllers\\ToDoTaskController.cs",
               "RelativeToolTip": "ToDoList.Api\\Controllers\\ToDoTaskController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAIA2wFoAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-11T06:59:18.204Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateToDoTaskListDto.cs",
-              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Dtos\\CreateToDoTaskListDto.cs",
-              "RelativeDocumentMoniker": "ToDoList.Application\\ToDoTaskLists\\Dtos\\CreateToDoTaskListDto.cs",
-              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTaskLists\\Dtos\\CreateToDoTaskListDto.cs",
-              "RelativeToolTip": "ToDoList.Application\\ToDoTaskLists\\Dtos\\CreateToDoTaskListDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "UpdateToDoTask.cs",
+              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTasks\\Commands\\UpdateToDoTask\\UpdateToDoTask.cs",
+              "RelativeDocumentMoniker": "ToDoList.Application\\ToDoTasks\\Commands\\UpdateToDoTask\\UpdateToDoTask.cs",
+              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTasks\\Commands\\UpdateToDoTask\\UpdateToDoTask.cs",
+              "RelativeToolTip": "ToDoList.Application\\ToDoTasks\\Commands\\UpdateToDoTask\\UpdateToDoTask.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T07:04:14.7Z",
+              "WhenOpened": "2025-06-13T11:27:08.747Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ToDoTaskDto.cs",
-              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTasks\\Dtos\\ToDoTaskDto.cs",
-              "RelativeDocumentMoniker": "ToDoList.Application\\ToDoTasks\\Dtos\\ToDoTaskDto.cs",
-              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTasks\\Dtos\\ToDoTaskDto.cs",
-              "RelativeToolTip": "ToDoList.Application\\ToDoTasks\\Dtos\\ToDoTaskDto.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "CreateToDoTaskHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTasks\\Commands\\CreateToDoTask\\CreateToDoTaskHandler.cs",
+              "RelativeDocumentMoniker": "ToDoList.Application\\ToDoTasks\\Commands\\CreateToDoTask\\CreateToDoTaskHandler.cs",
+              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Application\\ToDoTasks\\Commands\\CreateToDoTask\\CreateToDoTaskHandler.cs",
+              "RelativeToolTip": "ToDoList.Application\\ToDoTasks\\Commands\\CreateToDoTask\\CreateToDoTaskHandler.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T06:54:59.802Z",
+              "WhenOpened": "2025-06-13T11:47:12.773Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ToDoTaskRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Infrastructure\\Repository\\ToDoTaskRepository.cs",
-              "RelativeDocumentMoniker": "ToDoList.Infrastructure\\Repository\\ToDoTaskRepository.cs",
-              "ToolTip": "C:\\Users\\Goh Yi Harn\\Documents\\Interview\\ToDoList\\ToDoList.Infrastructure\\Repository\\ToDoTaskRepository.cs",
-              "RelativeToolTip": "ToDoList.Infrastructure\\Repository\\ToDoTaskRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T05:44:11.678Z"
             }
           ]
         }
