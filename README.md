@@ -4,7 +4,7 @@
 ```
 dotnet run --project ToDoList.Api
 ```
-**Need to run before running frontend to-do-list-ui project**
+**Need to run before running frontend to-do-list-ui project**<br/>
 Test cases can be runned with 
 ```
 dotnet test
