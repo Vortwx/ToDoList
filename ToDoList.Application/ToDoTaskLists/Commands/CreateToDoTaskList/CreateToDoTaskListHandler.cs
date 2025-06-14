@@ -9,7 +9,6 @@ namespace ToDoList.Application.ToDoTaskLists.Commands.CreateToDoTaskList;
 
 public class CreateToDoTaskListHandler : IRequestHandler<CreateToDoTaskList, ToDoTaskListDto>
 {
-    private readonly IToDoTaskRepository _toDoTaskRepository;
     private readonly IToDoTaskListRepository _toDoTaskListRepository;
     private readonly IMapper _mapper;
 

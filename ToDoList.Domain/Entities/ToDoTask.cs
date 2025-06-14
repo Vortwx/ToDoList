@@ -1,22 +1,26 @@
 namespace ToDoList.Domain.Entities;
 public class ToDoTask
 {
-    public Guid Id { get; private set; }
+    public Guid Id { get; private set; } 
 
     public ToDoTask(string notes, string title, DateTime dueDateTime, bool isDone)
     {
         Notes = notes;
+        if (string.IsNullOrWhiteSpace(title))
+        {
+            throw new ArgumentException("Task title cannot be empty for new tasks.", nameof(title));
+        }
         Title = title;
         DueDateTime = dueDateTime;
         IsDone = isDone;
     }
 
-    private ToDoTask() {}
+    private ToDoTask() {} 
 
-    public string Title { get; set; }
-    public string Notes { get; set; }
-    public DateTime DueDateTime { get; set; }
-    public bool IsDone { get; set; }
+    public string? Title { get; set; }
+    public string? Notes { get; set; }
+    public DateTime? DueDateTime { get; set; }
+    public bool? IsDone { get; set; }
 
     public void checkedIsDone()
     {

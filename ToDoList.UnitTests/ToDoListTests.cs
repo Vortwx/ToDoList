@@ -8,6 +8,7 @@ using ToDoList.Application.ToDoTaskLists.Dtos;
 using ToDoList.Application.ToDoTaskLists.Queries.GetToDoTaskListById;
 using ToDoList.Application.ToDoTasks.Commands.CreateToDoTask;
 using ToDoList.Application.ToDoTasks.Dtos;
+using ToDoList.Application.ToDoTasks.Queries.GetToDoTaskByDueDateTime;
 using ToDoList.Application.ToDoTasks.Queries.GetToDoTaskById;
 using ToDoList.Infrastructure.Data;
 using ToDoList.Infrastructure.Repository; 
@@ -24,6 +25,7 @@ public class ToDoListTests
     private IRequestHandler<CreateToDoTask, ToDoTaskDto> _createToDoTaskHandler; // Handler for creating tasks
     private GetToDoTaskListByIdHandler _getToDoTaskListByIdHandler;
     private GetToDoTaskByIdHandler _getToDoTaskByIdHandler;
+    private GetToDoTaskByDueDateTimeHandler _getToDoTasksByDueDateTimeHandler; 
 
     public ToDoListTests()
     {
@@ -46,6 +48,7 @@ public class ToDoListTests
         _createToDoTaskHandler = new CreateToDoTaskHandler(_toDoTaskListRepository, _mapper);
         _getToDoTaskListByIdHandler = new GetToDoTaskListByIdHandler(_toDoTaskListRepository, _mapper);
         _getToDoTaskByIdHandler = new GetToDoTaskByIdHandler(_toDoTaskListRepository, _mapper);
+        _getToDoTasksByDueDateTimeHandler = new GetToDoTaskByDueDateTimeHandler(_toDoTaskListRepository, _mapper); // Instantiate the new query handler
     }
 
     // --- Test Method for Creating a ToDoTaskList ---
@@ -126,4 +129,64 @@ public class ToDoListTests
         Assert.Equal("Some notes for the task", queriedTaskDto.Notes);
         Assert.False(queriedTaskDto.IsDone);
     }
+
+    // --- Examine the correctness of GetToDoTaskByDueDateTime which collects all eligible ToDoTask across all ToDoTaskList ---
+    [Fact]
+    public async Task GetTasksByDueDateTime_ShouldReturnAllTasksOnSameDate()
+    {
+        var commonDueDate = DateTime.Today.AddDays(1);
+
+        // --- Create ToDoTaskList One and ToDoTask One ---
+        var listOneDto = new CreateToDoTaskListDto("Daily Chores");
+        var listOneCommand = new CreateToDoTaskList(listOneDto);
+        var createdListOneDto = await _createToDoTaskListHandler.Handle(listOneCommand, CancellationToken.None);
+
+        var taskOneDto = new CreateToDoTaskDto
+        (
+            "Morning Routine",
+            "Drink coffee",
+            commonDueDate.AddHours(9),
+            false,
+            createdListOneDto.Id
+        );
+        var taskOneCommand = new CreateToDoTask(taskOneDto);
+        var createdTaskOneDto = await _createToDoTaskHandler.Handle(taskOneCommand, CancellationToken.None);
+
+        // --- Create ToDoTaskList Two and ToDoTask Two ---
+        var listTwoDto = new CreateToDoTaskListDto("Homework");
+        var listTwoCommand = new CreateToDoTaskList(listTwoDto);
+        var createdListTwoDto = await _createToDoTaskListHandler.Handle(listTwoCommand, CancellationToken.None);
+
+        var taskTwoDto = new CreateToDoTaskDto
+        (
+            "Software Design Report",
+            "Email to lecturer",
+            commonDueDate.AddHours(17),
+            false,
+            createdListTwoDto.Id
+        );
+        var taskTwoCommand = new CreateToDoTask(taskTwoDto);
+        var createdTaskTwoDto = await _createToDoTaskHandler.Handle(taskTwoCommand, CancellationToken.None);
+
+
+        var query = new GetToDoTaskByDueDateTime(commonDueDate);
+        var resultTasks = await _getToDoTasksByDueDateTimeHandler.Handle(query, CancellationToken.None);
+
+        Assert.NotNull(resultTasks);
+        Assert.Equal(2, resultTasks.Count); 
+
+        // Both created task IDs are in the result
+        Assert.Contains(resultTasks, t => t.Id == createdTaskOneDto.Id);
+        Assert.Contains(resultTasks, t => t.Id == createdTaskTwoDto.Id);
+
+        // Check that both tasks have the same due date as queried
+        var retrievedTaskOne = resultTasks.FirstOrDefault(t => t.Id == createdTaskOneDto.Id);
+        Assert.NotNull(retrievedTaskOne);
+        Assert.Equal(commonDueDate.Date, retrievedTaskOne.DueDateTime.Date); 
+
+        var retrievedTaskTwo = resultTasks.FirstOrDefault(t => t.Id == createdTaskTwoDto.Id);
+        Assert.NotNull(retrievedTaskTwo);
+        Assert.Equal(commonDueDate.Date, retrievedTaskTwo.DueDateTime.Date); 
+    }
+
 }

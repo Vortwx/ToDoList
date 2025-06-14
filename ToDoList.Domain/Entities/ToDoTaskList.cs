@@ -36,7 +36,7 @@ public class ToDoTaskList
         Tasks.Remove(taskToRemove);
     }
 
-    public ToDoTask GetTask(Guid taskId)
+    public ToDoTask? GetTask(Guid taskId)
     {
         return Tasks.FirstOrDefault(t => t.Id == taskId);
     }

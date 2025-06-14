@@ -21,7 +21,7 @@ public class UpdateToDoTaskListHandler : IRequestHandler<UpdateToDoTaskList, ToD
         _mapper = mapper;
     }
 
-    // An Upsert pattern of task is implemented here
+    // An Upsert pattern of task is implemented here (Taken care by individual ToDoTask's Handler)
     // Make sure the tasks is synchronous to the payload and its representative task list
     public async Task<ToDoTaskListDto> Handle(UpdateToDoTaskList request, CancellationToken cancellationToken)
     {
@@ -34,37 +34,44 @@ public class UpdateToDoTaskListHandler : IRequestHandler<UpdateToDoTaskList, ToD
         // do left outer join where left is the payload.tasks
         // before left outer join make sure that the non-matched right side is removed
         
-        var taskIdsPayload = request.UpdateToDoTaskListDto.Tasks
-            .Select(x => x.Id)
-            .ToHashSet();
+        // var taskIdsPayload = request.UpdateToDoTaskListDto.Tasks
+        //     .Select(x => x.Id)
+        //     .ToHashSet();
 
-        var removedTasks = taskList.Tasks
-            .Where(x => !taskIdsPayload.Contains(x.Id))
-            .ToList();
+        // var removedTasks = taskList.Tasks
+        //     .Where(x => !taskIdsPayload.Contains(x.Id))
+        //     .ToList();
 
-        foreach (var removedTask in removedTasks)
-        {
-            taskList.RemoveTask(removedTask.Id);
-        }
+        // foreach (var removedTask in removedTasks)
+        // {
+        //     taskList.RemoveTask(removedTask.Id);
+        // }
 
-        foreach (var taskPayload in request.UpdateToDoTaskListDto.Tasks)
-        {
-            var task = taskList.Tasks.FirstOrDefault(x => x.Id == taskPayload.Id);
-            if (task == null)
-            {
-                task = new ToDoTask(taskPayload.Notes, taskPayload.Title, taskPayload.DueDateTime, taskPayload.IsDone);
-                taskList.AddTask(task);
-            }
-            else
-            {
-                task.Notes = taskPayload.Notes;
-                task.Title = taskPayload.Title;
-                task.DueDateTime = taskPayload.DueDateTime;
-                task.IsDone = taskPayload.IsDone;
-            }
-        }
-        
-        await _toDoTaskListRepository.UpdateTaskListAsync(taskList); // will save inside this operation
+        // foreach (var taskPayload in request.UpdateToDoTaskListDto.Tasks)
+        // {
+        //     var task = taskList.Tasks.FirstOrDefault(x => x.Id == taskPayload.Id);
+        //     if (task == null)
+        //     {
+        //         taskList.AddTask(taskPayload);
+        //     }
+        //     else
+        //     {
+        //         //update
+        //         if (taskPayload.Notes != null) {
+        //             task.Notes = taskPayload.Notes;
+        //         }
+        //         if (taskPayload.Title != null) {
+        //             task.Title = taskPayload.Title;
+        //         }
+        //         if (taskPayload.DueDateTime != null) {
+        //             task.DueDateTime = taskPayload.DueDateTime;
+        //         }
+        //         if (taskPayload.IsDone != null) {
+        //             task.IsDone = taskPayload.IsDone;
+        //         }
+        //     }
+        // }
+        // await _toDoTaskListRepository.UpdateTaskListAsync(taskList); // will save inside this operation
         return _mapper.Map<ToDoTaskListDto>(taskList);
     }
 }

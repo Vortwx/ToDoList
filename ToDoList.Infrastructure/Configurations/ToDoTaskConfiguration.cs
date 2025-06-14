@@ -8,10 +8,11 @@ namespace ToDoList.Infrastructure.Configurations
     {
         public void Configure(EntityTypeBuilder<ToDoTask> builder)
         {
+            // Delegate validation to each Dto
             builder.HasKey(t => t.Id);
-            builder.Property(t => t.Title).IsRequired();
-            builder.Property(t => t.DueDateTime).IsRequired();
-            builder.Property(t => t.IsDone).IsRequired();
+            builder.Property(t => t.Title);
+            builder.Property(t => t.DueDateTime);
+            builder.Property(t => t.IsDone);
         }
     }
 }

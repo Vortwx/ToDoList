@@ -49,7 +49,7 @@ public class ToDoTaskListRepository : IToDoTaskListRepository
     public async Task<IEnumerable<ToDoTask>> GetTasksByDueDateTimeAsync(DateTime dueDateTime)
     {
         return await _context.ToDoTaskCollection
-            .Where(t => t.DueDateTime.Date == dueDateTime.Date)
+            .Where(t => t.DueDateTime.HasValue && t.DueDateTime.Value.Date == dueDateTime.Date)
             .ToListAsync();
     }
 }

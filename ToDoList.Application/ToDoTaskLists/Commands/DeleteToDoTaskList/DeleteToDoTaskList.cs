@@ -9,9 +9,9 @@ namespace ToDoList.Application.ToDoTaskLists.Commands.DeleteToDoTaskList;
 // DeleteToDoTaskListDto only serves as Input DTO (represent input payload)
 public class DeleteToDoTaskList : IRequest<ToDoTaskListDto>
 {
-    public ToDoTaskListDto ToDoTaskListDto { get; }
-    public DeleteToDoTaskList(ToDoTaskListDto toDoTaskListDto)
+    public Guid Id { get; }
+    public DeleteToDoTaskList(Guid id)
     {
-        ToDoTaskListDto = toDoTaskListDto;
+        Id = id;
     }
 }

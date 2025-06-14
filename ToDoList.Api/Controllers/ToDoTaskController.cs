@@ -9,7 +9,7 @@ using ToDoList.Application.ToDoTasks.Commands.DeleteToDoTask;
 using ToDoList.Application.ToDoTasks.Commands.UpdateToDoTask;
 using ToDoList.Application.ToDoTasks.Dtos;
 using ToDoList.Application.ToDoTasks.Queries.GetToDoTaskByDueDateTime;
-using ToDoList.Application.ToDoTasks.Queries.GetToDoTaskById; // For ToDoTaskDto, CreateToDoTaskDto, UpdateToDoTaskDto, DeleteToDoTaskDto
+using ToDoList.Application.ToDoTasks.Queries.GetToDoTaskById; 
 
 namespace ToDoList.Api.Controllers;
 
@@ -38,7 +38,7 @@ public class ToDoTaskController : ControllerBase
     /// </summary>
     /// <param name="createToDoTaskDto">The data for creating the new ToDo Task, including its parent list ID.</param>
     /// <returns>The newly created ToDoTaskDto object.</returns>
-    /// <response code="201">Returns the newly created ToDo Task.</response>
+    /// <response code="200">Returns the newly created ToDo Task.</response>
     /// <response code="400">If the input data is invalid.</response>
     /// <response code="404">If the specified parent ToDo Task List is not found.</response>
     [HttpPost]
@@ -67,7 +67,7 @@ public class ToDoTaskController : ControllerBase
         {
             return BadRequest(ex.Message);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while creating the ToDo Task.");
         }
@@ -95,9 +95,9 @@ public class ToDoTaskController : ControllerBase
         {
             return NotFound(ex.Message);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            return StatusCode((int)HttpStatusCode.InternalServerError, $"An error occurred while retrieving the ToDo Task. {ex.Message}");
+            return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while retrieving the ToDo Task.");
         }
     }
 
@@ -140,9 +140,8 @@ public class ToDoTaskController : ControllerBase
         {
             return BadRequest(ex.Message);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            // Log the exception
             return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while updating the ToDo Task.");
         }
     }
@@ -182,9 +181,8 @@ public class ToDoTaskController : ControllerBase
         {
             return NotFound(ex.Message);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            // Log the exception
             return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while deleting the ToDo Task.");
         }
     }
@@ -197,9 +195,9 @@ public class ToDoTaskController : ControllerBase
     /// <response code="200">Returns the list of ToDo Tasks matching the due date.</response>
     [HttpGet("byduedate")]
     [ProducesResponseType(typeof(List<ToDoTaskDto>), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<List<ToDoTaskDto>>> GetToDoTasksByDueDateTime([FromQuery] DateTime dueDateTime, [FromQuery] Guid parentListId)
+    public async Task<ActionResult<List<ToDoTaskDto>>> GetToDoTasksByDueDateTime([FromQuery] DateTime dueDateTime)
     {
-        var result = await _mediator.Send(new GetToDoTaskByDueDateTime(dueDateTime, parentListId));
+        var result = await _mediator.Send(new GetToDoTaskByDueDateTime(dueDateTime));
         return Ok(result);
     }
 }

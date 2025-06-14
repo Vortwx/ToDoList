@@ -1,1 +1,1 @@
-This is created for defining schema-like rules for each entities as I'm using Entity Framework Core
+This is created for defining schema-like rules for each entities.

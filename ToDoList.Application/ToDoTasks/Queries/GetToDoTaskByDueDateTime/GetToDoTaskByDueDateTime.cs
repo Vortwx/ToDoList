@@ -6,12 +6,10 @@ namespace ToDoList.Application.ToDoTasks.Queries.GetToDoTaskByDueDateTime
     public class GetToDoTaskByDueDateTime: IRequest<List<ToDoTaskDto>>
     {
         public DateTime DueDateTime { get; set; }
-        public Guid ParentListId { get; }
 
-        public GetToDoTaskByDueDateTime(DateTime dueDateTime, Guid parentListId)
+        public GetToDoTaskByDueDateTime(DateTime dueDateTime)
         {
             DueDateTime = dueDateTime;
-            ParentListId = parentListId;
         }
     }
 }

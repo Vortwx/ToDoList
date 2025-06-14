@@ -9,7 +9,8 @@ namespace ToDoList.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<ToDoTaskList> builder)
         {
             builder.HasKey(tl => tl.Id);
-            builder.Property(tl => tl.Name).IsRequired();
+            builder.Property(tl => tl.Name);
+            // Tasks is not added here as it is a nvaigation property and is defined below
             
             // One-to-Many between ToDoTaskList and ToDoTask
             builder.HasMany(tl => tl.Tasks)

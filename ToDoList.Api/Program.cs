@@ -39,6 +39,17 @@ builder.Services.AddScoped<IToDoTaskListRepository, ToDoTaskListRepository>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
+// Add CORS for different origins (.NET & Typescript)
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // React frontend origin
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -85,9 +96,9 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+app.UseCors();
 app.UseHttpsRedirection();
 
 app.MapControllers();
-app.MapGet("/", () => "Hello from ToDoList API!");
 
 app.Run();

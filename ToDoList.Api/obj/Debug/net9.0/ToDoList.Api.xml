@@ -22,7 +22,7 @@
             </summary>
             <param name="createToDoTaskDto">The data for creating the new ToDo Task, including its parent list ID.</param>
             <returns>The newly created ToDoTaskDto object.</returns>
-            <response code="201">Returns the newly created ToDo Task.</response>
+            <response code="200">Returns the newly created ToDo Task.</response>
             <response code="400">If the input data is invalid.</response>
             <response code="404">If the specified parent ToDo Task List is not found.</response>
         </member>
@@ -58,7 +58,7 @@
             <response code="400">If the input data is invalid or IDs mismatch.</response>
             <response code="404">If the ToDo Task or its parent ToDo Task List is not found.</response>
         </member>
-        <member name="M:ToDoList.Api.Controllers.ToDoTaskController.GetToDoTasksByDueDateTime(System.DateTime,System.Guid)">
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskController.GetToDoTasksByDueDateTime(System.DateTime)">
             <summary>
             Retrieves all ToDo Tasks across all lists that have a specific due date and time.
             </summary>
@@ -114,7 +114,7 @@
             <response code="400">If the input data is invalid or IDs mismatch.</response>
             <response code="404">If the ToDo Task List with the specified ID is not found.</response>
         </member>
-        <member name="M:ToDoList.Api.Controllers.ToDoTaskListController.DeleteToDoTaskList(System.Guid,ToDoList.Application.ToDoTaskLists.Dtos.ToDoTaskListDto)">
+        <member name="M:ToDoList.Api.Controllers.ToDoTaskListController.DeleteToDoTaskList(System.Guid)">
             <summary>
             Deletes a ToDo Task List by its ID.
             This will also cascade delete all associated ToDo Tasks.

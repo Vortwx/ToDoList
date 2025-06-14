@@ -92,13 +92,12 @@ public class ToDoTaskListController : ControllerBase
             var result = await _mediator.Send(new CreateToDoTaskList(createDto));
             return Ok(result);
         }
-        catch (ArgumentException ex) // Catches validation errors from domain (e.g., empty name)
+        catch (ArgumentException ex)
         {
             return BadRequest(ex.Message);
         }
-        catch (Exception ex) // Catch any other unexpected errors
+        catch (Exception)
         {
-            // Log the exception (using a logger if available)
             return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while creating the ToDo Task List.");
         }
     }
@@ -142,7 +141,7 @@ public class ToDoTaskListController : ControllerBase
         {
             return BadRequest(ex.Message);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while updating the ToDo Task List.");
         }
@@ -159,28 +158,18 @@ public class ToDoTaskListController : ControllerBase
     [HttpDelete("{id}")]
     [ProducesResponseType((int)HttpStatusCode.NoContent)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public async Task<ActionResult> DeleteToDoTaskList(Guid id, [FromBody] ToDoTaskListDto toDoTaskListDto)
+    public async Task<ActionResult> DeleteToDoTaskList(Guid id)
     {
-        if (id != toDoTaskListDto.Id)
-        {
-            return BadRequest($"ID in route '{id}' does not match ID in payload '{toDoTaskListDto.Id}'.");
-        }
-
-        if (!ModelState.IsValid)
-        {
-            return BadRequest(ModelState);
-        }
-
         try
         {
-            await _mediator.Send(new DeleteToDoTaskList(toDoTaskListDto));
+            await _mediator.Send(new DeleteToDoTaskList(id));
             return NoContent(); 
         }
         catch (KeyNotFoundException)
         {
             return NotFound($"ToDo Task List with ID '{id}' not found.");
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode((int)HttpStatusCode.InternalServerError, "An error occurred while deleting the ToDo Task List.");
         }
