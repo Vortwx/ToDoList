@@ -75,7 +75,7 @@ This is motivated by
 
 In the Controller design, I ask user for id repetitively in a implicit way (by explicitly requires an id for ToDoTask and implicitly requires an id in respective Dto). I thought that this could help double confirm the correct id since taskId and its parentList id both use Guid which can easily be confusing. However, later when I intergrating .NET backend with React frontend this problem is found impossible to happen as I will create the Dto and the id at the same time, which makes it redundant. As it doesn't affect functionality I will keep it as-is.
 
-### Issues encountered
+### Issues encountered (They are resolved already)
 1. Encounter a problem where the EF tracker misclassified the state of item leading to an error: Attempted to update or delete an entity that does not exist in the store.
 Resolved by not specifying Guid at start and let EF core do the work.
 2. Lazy evaluation of EF core requires Include() to show child properties
