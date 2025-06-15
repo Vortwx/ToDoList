@@ -1,5 +1,7 @@
 # ToDoList
 
+Author: Goh Yi Harn
+
 ### Project Setup
 ```
 dotnet run --project ToDoList.Api
